@@ -1,0 +1,24 @@
+services:
+  ctf_container_1:
+    build: .
+    container_name: ctf_container_1
+    ports:
+      - "2201:22"
+    environment:
+      - USERNAME=ctfuser
+      - PASSWORD=CTFpassword123
+    volumes:
+      - /home/webhack/ctf_challenge/challenge/ctf_container_1:/home/webhack_host
+    restart: unless-stopped
+
+  ctf_container_2:
+    build: .
+    container_name: ctf_container_2
+    ports:
+      - "2202:22"
+    environment:
+      - USERNAME=ctfuser
+      - PASSWORD=CTFpassword123
+    volumes:
+      - /home/webhack/ctf_challenge/challenge/ctf_container_2:/home/webhack_host
+    restart: unless-stopped
