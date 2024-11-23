@@ -11,8 +11,8 @@ RUN apt-get update && apt-get install -y \
     passwd
 
 # Create a user for SSH access
-ARG USERNAME=ctfuser
-ARG PASSWORD=CTFpassword123
+ARG USERNAME="user"
+ARG PASSWORD="password"
 
 RUN useradd -m -s /bin/bash $USERNAME && \
     echo "$USERNAME:$PASSWORD" | chpasswd && \
